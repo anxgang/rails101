@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  action_before :find_group
+  before_action :authenticate_user!
+  before_action :find_group
 
   def new
     @post = @group.posts.new
@@ -40,7 +41,7 @@ class PostsController < ApplicationController
   def find_group
     @group = Group.find(params[:group_id])
   end
-  
+
   def post_params
     params.require(:post).permit(:content)
   end
