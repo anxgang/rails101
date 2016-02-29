@@ -6,7 +6,7 @@
       <%= f.input :title %>
       <%= f.input :description %>
     </div>
-    <%= f.submit "submit", class: "btn btn-primary",
-        data: { disable_with: "Submitting..." } %>
+    <%= f.submit "submit", class: "btn btn-primary", data: { disable_with: "Submitting..." } %>
+    <%= link_to("Back", groups_path, class: "btn btn-sm btn-default")%>
   <% end %>
 </div>
